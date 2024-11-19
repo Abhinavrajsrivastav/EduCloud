@@ -1,0 +1,151 @@
+/* Include in your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+;@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.info-sec {
+    color: #fff;
+    padding: 0px 0;
+    background: url('./vimal-s-YcLiQSXzCiE-unsplash.jpg') no-repeat center center/cover;   
+    height: 100vh;
+}
+
+.light-bg {
+    background: #fff;
+}
+
+.dark-bg {
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.info-row {
+    display: flex;
+    margin: 0 -15px -15px -15px;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 60px;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.info-column {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    flex: 1;
+    max-width: 50%;
+    flex-basis: 50%;
+    position: relative;
+    top: 0px;
+}
+
+.text-wrapper {
+    max-width: 540px;
+    padding-top: 0;
+    padding-bottom: 60px;
+}
+
+.top-line {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    margin-bottom: 16px;
+}
+
+.light-top-line {
+    color: #ffffff;
+}
+
+.heading {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 440;
+    color: #ffffff;
+}
+
+.light-text {
+    color: #f7f8fa;
+}
+
+.subtitle {
+    max-width: 440px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.light-text-desc {
+    color: #a9b3c1;
+}
+
+.img-wrapper {
+    max-width: 555px;
+    display: flex;
+    justify-content: flex-end; /* Adjust based on your needs */
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: #4B59F7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Fredoka", sans-serif;
+}
+
+.primary {
+    background: #4B59F7; /* Use a different color if needed */
+}
+
+.img-wrapper {
+    max-width: 555px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    mask-size: cover;
+    background-color: transparent; /* Set background color to transparent */
+    position: relative;
+    top: -20px;
+}
+
+
+/* Add responsive styles if needed */
+@media (max-width: 768px) {
+    .info-column {
+        max-width: 100%;
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-wrapper {
+        padding-bottom: 65px;
+    }
+}

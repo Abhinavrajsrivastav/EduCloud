@@ -1,0 +1,42 @@
+/* src/Components/MeetingScheduler.css */
+.scheduler-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000000;
+}
+
+.auth-button,
+.create-button {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 16px;
+  background-color: #574bf7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-button:hover,
+.create-button:hover {
+  background-color: #4338ca;
+}
+
+.meeting-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.meeting-info a {
+  color: #574bf7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.meeting-info a:hover {
+  text-decoration: underline;
+}
