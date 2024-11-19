@@ -7,7 +7,6 @@ import Features from './Pages/Features/Features';
 import Landing from './Pages/Landing/InfoSection';
 import StartMeeting from './Pages/ActivityPage/Interview/StartMeeting';
 import JoinMeeting from './Pages/ActivityPage/Scedule/JoinMeeting';
-import Schedule from './Pages/ActivityPage/Calender/Schedule';
 import MeetingPage from './Pages/MeetingPage'; // Add this import
 import VideoCallPage from './Pages/ActivityPage/VideoCallPage'
 
