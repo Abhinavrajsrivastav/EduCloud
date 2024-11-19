@@ -13,7 +13,8 @@ function App() {
   return (
     <UserProvider>
       <Router>
-        <Navbar />
+        <Switch>
+          <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/profile" element={<Profile />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path="/join-meeting" element={<JoinMeeting />} />
           <Route path="/meeting" element={<VideoCallPage />} />
         </Routes>
+        </Switch>
       </Router>
     </UserProvider>
   );
