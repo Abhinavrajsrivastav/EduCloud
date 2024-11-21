@@ -13,8 +13,8 @@ function App() {
   return (
     <UserProvider>
       <Router>
-        <Navbar /> {/* Navbar will be visible on all pages */}
-        <Routes> {/* No need for Switch here */}
+        <Navbar /> 
+        <Routes> 
           <Route path="/" element={<Landing />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/features" element={<Features />} />

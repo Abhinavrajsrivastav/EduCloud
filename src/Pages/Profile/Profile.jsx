@@ -11,7 +11,8 @@ import './Profile.css';
 const Profile = () => {
   const { user, setUser } = useUser();
   const [email, setEmail] = useState('');
-  
+  const [isSidebarOpen, setSidebarOpen] = useState(false);  // For sidebar toggle
+
   useEffect(() => {
     const userData = localStorage.getItem('user');
     if (userData) {
@@ -26,25 +27,41 @@ const Profile = () => {
     return <h1>Please log in to view your profile</h1>;
   }
 
+  // Function to toggle the sidebar
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="profile-page">
       {/* User Info Section */}
       <div className="user-info">
         <FaUserCircle className="user-avatar" />
         <h2>Welcome, {email || 'User'}</h2>
+        {/* Click on avatar to open sidebar */}
+        <button className="toggle-contact-btn" onClick={toggleSidebar}>
+          {isSidebarOpen ? 'Close Sidebar' : 'Open Sidebar'}
+        </button>
+      </div>
+
+      {/* Contact Sidebar */}
+      <div className={`contact-sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <div className="contact-list">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>Email: {email}</li>
+            <li>Phone: {user?.phone || 'Not available'}</li>
+            {/* Add more contact info here */}
+          </ul>
+        </div>
       </div>
 
       {/* Profile Features with Links */}
       <div className="features-grid">
-        {/* <Link to="/schedule-meeting" className="feature-card">
-          <FcCalendar className="feature-icon" />
-          <h3>Meeting Scheduler</h3>
-          <p>Plan interviews with calendar sync.</p>
-        </Link> */}
-
+        {/* Feature Card Example */}
         <Link to="/start-meeting" className="feature-card">
           <FcVideoCall className="feature-icon" />
-          <h3>Start a Interviews</h3>
+          <h3>Start a Meeting</h3>
           <p>Join video calls seamlessly.</p>
         </Link>
 
@@ -60,6 +77,11 @@ const Profile = () => {
           <p>Monitor interview metrics.</p>
         </Link>
 
+        <Link to="/schedule-meeting" className="feature-card">
+          <FcCalendar className="feature-icon" />
+          <h3>Schedule Interview</h3>
+          <p>Plan interviews with calendar sync.</p>
+        </Link>
       </div>
     </div>
   );

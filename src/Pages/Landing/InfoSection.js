@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../Login/Login';
 import './InfoSection.css'; 
-import { useUser } from '../../UserContext'; 
+import { useUser } from '../../UserContext';
 
 const InfoSection = ({ 
     primary,
@@ -16,11 +16,10 @@ const InfoSection = ({
     buttonLabel,
     img,
     alt,
-    imgStart,
-    start
+    imgStart
 }) => {
 
-    const { user, setUser } = useUser(); // Use the useUser hook to access user context
+    const { user } = useUser(); // Access user context
 
     return (
         <div className={`info-sec ${lightBg ? 'light-bg' : 'dark-bg'}`}>
@@ -29,32 +28,31 @@ const InfoSection = ({
                     <div className="info-column">
                         <div className="text-wrapper">
                             <div className={`top-line ${lightTopLine ? 'light-top-line' : ''}`}>
-                                {topLine ? topLine : 'Welcome to the Columbae'}
+                                {topLine || 'Welcome to Columbae'}
                             </div>
                             <h1 className={`heading ${lightText ? 'light-text' : ''}`}>
-                                {headline ? headline : 'Making Interviews Like a Breeze'}
+                                {headline || 'Making Interviews Like a Breeze'}
                             </h1>
                             <p className={`subtitle ${lightTextDesc ? 'light-text-desc' : ''}`}>
-                                {description ? description : 'Our platform offers features that make interview scheduling, preparation, and tracking seamless for both interviewers and candidates.'}
+                                {description || 'Our platform offers features that make interview scheduling, preparation, and tracking seamless for both interviewers and candidates.'}
                             </p>
                             <Link to='/sign-up'>
                                 <button className={`btn ${primary ? 'primary' : ''}`}>
-                                    {buttonLabel ? buttonLabel : 'Get Started Now'}
+                                    {buttonLabel || 'Get Started Now'}
                                 </button>
                             </Link>
                         </div>
                     </div>
-
                     <div className="info-column">
                         <div className="img-wrapper">
-                            {!user&&<Login />}
-                            {/* {user&&<img src='./Logo/landing_page.png' alt={alt} className="img" />} */}
+                            {!user && <Login />}
+                            {/* {user && <img src={img || './Logo/landing_page.png'} alt={alt || 'Interview Platform'} className="img" />} */}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default InfoSection;

@@ -1,5 +1,4 @@
 /* General Styles */
-
 .profile-page {
   display: flex;
   flex-direction: column;
@@ -35,11 +34,11 @@
 /* Contact Sidebar */
 .contact-sidebar {
   position: fixed;
-  top: 0;
+  top: 64px;
   right: -320px;
   width: 300px;
   height: 100%;
-  background-color: #007bff;
+  background-color: #000000;
   color: #fff;
   transition: right 0.4s ease-in-out;
   padding: 20px;
@@ -79,7 +78,8 @@
   width: auto;
   display: flex;
   justify-content: center;
-  flex-direction: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
 }
 
 .feature-card {
@@ -90,6 +90,8 @@
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   width: 200px;
+  margin: 10px;
+  color: inherit;
 }
 
 .feature-card:hover {
@@ -111,21 +113,4 @@
 .feature-card p {
   font-size: 0.9rem;
   color: #666;
-}
-
-
-.feature-card {
-  background-color: #546dde21;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }

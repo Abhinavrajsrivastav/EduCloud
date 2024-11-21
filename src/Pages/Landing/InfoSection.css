@@ -1,151 +1,183 @@
-/* Include in your CSS */
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-;@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/* Section styling */
 .info-sec {
     color: #fff;
-    padding: 0px 0;
-    background: url('./vimal-s-YcLiQSXzCiE-unsplash.jpg') no-repeat center center/cover;   
-    height: 100vh;
+    padding: 0;
+    background: url('./vimal-s-YcLiQSXzCiE-unsplash.jpg') no-repeat center center/cover;
+    height: 100vh; /* Set full height for desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 0; /* Remove any default top margin */
 }
 
 .light-bg {
-    background: #fff;
+    background: #f9f9f9;
+    color: #000;
 }
 
-.dark-bg {
-}
-
+/* Container Styling */
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px 15px;
     font-family: "Fredoka", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
 }
 
+/* Flex Row for info sections */
 .info-row {
     display: flex;
-    margin: 0 -15px -15px -15px;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    position: relative;
-    top: 60px;
+    gap: 20px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .row-reverse {
     flex-direction: row-reverse;
 }
 
+/* Styling for individual columns */
 .info-column {
-    margin-bottom: 15px;
-    padding: 0 15px;
     flex: 1;
+    text-align: start;
     max-width: 50%;
-    flex-basis: 50%;
-    position: relative;
-    top: 0px;
+    font-family: 'Fredoka', sans-serif; /* Modern, clean font */
+    font-weight: 500; /* Slightly bold overall */
+    color: #f5f5f5; /* Light grey for contrast */
 }
 
 .text-wrapper {
     max-width: 540px;
-    padding-top: 0;
-    padding-bottom: 60px;
+    margin: 0 auto;
 }
 
+/* Top Line Style */
 .top-line {
-    color: #ffffff;
+    color: #4b59f7;
     font-size: 18px;
-    line-height: 16px;
-    font-weight: 400;
     letter-spacing: 1.4px;
+    text-transform: uppercase;
+    font-weight: 700; /* Bold text for top line */
     margin-bottom: 16px;
 }
 
-.light-top-line {
-    color: #ffffff;
-}
-
+/* Heading Text */
 .heading {
+    font-size: 2.8rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold heading */
     margin-bottom: 24px;
-    font-size: 48px;
-    line-height: 1.1;
-    font-weight: 440;
-    color: #ffffff;
+    line-height: 1.2;
+    color: #fff; /* Contrasting color for dark backgrounds */
 }
 
-.light-text {
-    color: #f7f8fa;
-}
-
+/* Subtitle Text */
 .subtitle {
-    max-width: 440px;
+    font-size: 1.1rem; /* Slightly larger for better readability */
+    font-weight: 400; /* Normal weight for easy reading */
     margin-bottom: 35px;
-    font-size: 18px;
-    line-height: 24px;
-    color: #ffffff;
+    color: #e0e0e0; /* Softer light grey */
+    line-height: 1.6;
 }
 
-.light-text-desc {
-    color: #a9b3c1;
-}
-
-.img-wrapper {
-    max-width: 555px;
-    display: flex;
-    justify-content: flex-end; /* Adjust based on your needs */
-}
-
+/* Button Styling */
 .btn {
-    padding: 12px 30px;
+    padding: 14px 32px;
     font-size: 16px;
     color: #fff;
-    background: #4B59F7;
+    background: #4b59f7;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
+    font-weight: 700; /* Bold text for call-to-action */
     font-family: "Fredoka", sans-serif;
+    transition: all 0.3s ease-in-out;
 }
 
-.primary {
-    background: #4B59F7; /* Use a different color if needed */
+.btn:hover {
+    background: #3A49F7;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Image Wrapper Styling */
 .img-wrapper {
-    max-width: 555px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
+/* Image Styling */
 .img {
     width: 100%;
     max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    mask-size: cover;
-    background-color: transparent; /* Set background color to transparent */
-    position: relative;
-    top: -20px;
+    border-radius: 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+.img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
 
-/* Add responsive styles if needed */
+/* Add Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .info-column {
-        max-width: 100%;
-        flex-basis: 100%;
-        display: flex;
-        justify-content: center;
+    /* Adjust the info-sec height for mobile */
+    .info-sec {
+        height: auto; /* Set height to auto to prevent it from overflowing */
+        margin-top: 60px; /* Adjust for navbar height (if it's fixed) */
     }
 
-    .text-wrapper {
-        padding-bottom: 65px;
+    /* Adjust column width */
+    .info-column {
+        max-width: 100%; /* Make the columns full width on mobile */
+    }
+
+    .text-wrapper{
+        text-align: start;
+        max-width: 90%;
+    }
+
+    .heading {
+        font-size: 2rem; /* Slightly smaller for mobile */
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .img {
+        max-width: 350px; /* Slightly smaller image for mobile */
     }
 }
