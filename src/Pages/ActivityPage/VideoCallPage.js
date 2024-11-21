@@ -15,6 +15,8 @@ function randomID(len) {
   return result;
 }
 
+
+
 export function getUrlParams(
   url = window.location.href
 ) {
