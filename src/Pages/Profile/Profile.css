@@ -6,8 +6,8 @@
   padding: 80px 20px 20px 20px;
   width: 100%;
   height: 100vh;
-  background-color: black;
   overflow-x: hidden;
+  background: url('./wave-haikei\ \(2\).svg') no-repeat center center/cover;
 }
 
 /* User Info */
@@ -87,7 +87,7 @@
 }
 
 .feature-card {
-  background-color: #546dde21;
+  background-color: #11549263;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -132,6 +132,10 @@
     bottom: 20px;
     gap: 20px;
     right: 20px;
+  }
+
+  .user-info h2{
+    font-size: 1.2rem;
   }
 
   .profile-page{

@@ -14,9 +14,8 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#162591cd' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#4b59f7' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        {/* Logo and Title */}
         <div className="navbar-brand">
           <img src='./logo/hexagon.png' className='nav-logo' alt="Logo" />
           <Typography variant="h6" component={Link} to="/" sx={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold' }}>

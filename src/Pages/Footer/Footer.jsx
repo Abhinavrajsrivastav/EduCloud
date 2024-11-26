@@ -10,25 +10,16 @@ const Footer = () => {
                     <h2>About the Developer</h2>
                     <p>
                         Hi, I'm <strong>Abhinav Raj Srivastava</strong>, A Final Year Computer Science Engineering Student at ABES Engineering College, Ghaziabad.</p> 
-                    <a
-                        href="https://www.linkedin.com/in/abhinav-raj-srivastava-599aaa1b2/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="footer-link"
-                    >
-                        Connect with me on LinkedIn
-                    </a>
                 </div>
 
                 {/* About Project */}
                 <div className="footer-section about-project">
                     <h2>About the Project</h2>
                     <p>
-                        <strong>Columbae</strong>: A platform designed to make interview processes seamless.
+                        Columbae isdesigned to make interview processes seamless.
                     </p>
                 </div>
 
-                {/* Footer Navigation */}
                 <div className="footer-section footer-navigation">
                     <h2>Developer Profiles</h2>
                     <ul>
@@ -41,9 +32,8 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Footer Bottom */}
             <div className="footer-bottom">
-                <p>&copy; 2024 Columbae | Made with ❤️ by <a href="https://github.com/Abhinavrajsrivastav">Abhinav Raj Srivastava</a></p>
+                <p>&copy; 2024 Columbae | Made with 💜 by <a href="https://github.com/Abhinavrajsrivastav">Abhinav Raj Srivastava</a></p>
             </div>
         </footer>
     );

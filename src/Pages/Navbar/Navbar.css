@@ -1,6 +1,7 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .nav-logo {

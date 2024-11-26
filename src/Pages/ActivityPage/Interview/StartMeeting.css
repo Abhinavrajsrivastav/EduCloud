@@ -1,4 +1,9 @@
 
+.meeting{
+  height: 100vh;
+  padding-top: 70px;
+}
+
 .meeting-container {
   max-width: 500px;
   margin: 50px auto;
@@ -27,12 +32,12 @@
 }
 
 .toggle-button.active {
-  background-color: #4b7bec;
+  background-color: #4b59f7;
   color: white;
 }
 
 .toggle-button:hover {
-  background-color: #5a85f6;
+  background-color: #4b59f7;
 }
 
 .meeting-form input {
@@ -45,7 +50,7 @@
 }
 
 .meeting-form input:focus {
-  border-color: #4b7bec;
+  border-color: #3444f5ba;
   outline: none;
 }
 
@@ -53,7 +58,7 @@
   width: 100%;
   padding: 12px;
   margin-top: 15px;
-  background-color: #4b7bec;
+  background-color: #272f89;
   color: white;
   font-weight: bold;
   border: none;

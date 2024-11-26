@@ -1,10 +1,13 @@
-/* Footer Styling */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
 .footer {
-    background-color: #111;
+    background-color: #4b59f742;
     color: #fff;
     padding: 40px 20px;
-    font-family: "Fredoka", sans-serif;
-    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* Footer Container */
@@ -18,22 +21,19 @@
     gap: 30px;
 }
 
-/* Individual Footer Sections */
 .footer-section {
     flex: 1;
     min-width: 280px;
     text-align: start;
 }
 
-/* Section Headings */
 .footer-section h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     font-weight: 700;
-    color: #4b59f7;
 }
 
-/* Developer Section */
+
 .about-developer p {
     font-size: 1rem;
     line-height: 1.6;
@@ -46,6 +46,7 @@
   flex-direction: row;
   justify-content: space-between;
   text-align: start;
+  gap: 2px;
 }
 
 .footer-section ul li a{
@@ -55,26 +56,13 @@
     transition: color 0.3s;
 }
 
-.footer-link:hover {
-    color: #3a49f7;
-}
-
-/* Project Section */
 .about-project p {
     font-size: 1rem;
     line-height: 1.6;
     color: #ddd;
 }
 
-.project-quote {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #f9d342;
-    text-align: start;
-}
 
-/* Footer Navigation */
 .footer-navigation ul {
     list-style-type: none;
     padding: 0;
@@ -86,28 +74,25 @@
 
 .footer-navigation ul li a {
     text-decoration: none;
-    color: #4b59f7;
     font-size: 1rem;
 }
 
-.footer-navigation ul li a:hover {
-    color: #3a49f7;
-    text-decoration: underline;
-}
 
-/* Footer Bottom */
 .footer-bottom {
     margin-top: 20px;
     font-size: 0.9rem;
     color: #bbb;
     border-top: 1px solid #444;
     padding-top: 10px;
+    text-align: center;
 }
+
  .footer-bottom p a{
         text-decoration: none;
+        color: white;
     } 
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -119,6 +104,13 @@
     .footer-section {
         max-width: 100%;
         align-items: start;
+        text-align: start;
+    }
+
+    .footer-section ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         text-align: start;
     }
     .footer-bottom{
