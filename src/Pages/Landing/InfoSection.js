@@ -47,7 +47,7 @@ const InfoSection = ({
                             {!user && <Login />}
                             {user && (
                                 <img
-                                    src={img || './Logo/landing_page.png'}
+                                    src={img || './logo/landing_page.png'}
                                     alt={alt || 'Interview Platform'}
                                     className="img"
                                 />
