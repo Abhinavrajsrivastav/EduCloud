@@ -41,11 +41,11 @@ const Profile = () => {
           <h3>Start a Meeting</h3>
           <p>Join video calls seamlessly.</p>
         </Link>
-        <Link to="/join-meeting" className="feature-card">
+        {/* <Link to="/join-meeting" className="feature-card">
           <FcFeedback className="feature-icon" />
           <h3>Join Meeting</h3>
           <p>Instantly connect to interviews.</p>
-        </Link>
+        </Link> */}
         <Link to="/features" className="feature-card">
           <FcComboChart className="feature-icon" />
           <h3>Analytics</h3>
