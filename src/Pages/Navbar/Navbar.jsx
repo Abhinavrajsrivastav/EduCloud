@@ -1,91 +1,82 @@
-// src/components/Navbar/Navbar.jsx
 import React, { useState } from 'react';
-import './Navbar.css';
-import { useUser } from '../../UserContext';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, IconButton, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
+import { useUser } from '../../UserContext';
+import './Navbar.css';
 
 const Navbar = () => {
-  const { user } = useUser(); // Access user context
-  const [isMenuOpen, setMenuOpen] = useState(null); // Mobile menu state
+  const { user } = useUser();
+  const [drawerOpen, setDrawerOpen] = useState(false); 
 
-  const handleMenuOpen = (event) => {
-    setMenuOpen(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setMenuOpen(null);
+  const toggleDrawer = (open) => {
+    setDrawerOpen(open);
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#162591cd', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#162591cd' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        {/* Logo */}
-        <div className="navbar-logo">
-          <img src="./logo/hexagon.png" alt="App Logo" style={{ height: '40px', marginRight: '10px' }} />
-          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>columbae</Typography>
+        {/* Logo and Title */}
+        <div className="navbar-brand">
+          <img src='./logo/hexagon.png' className='nav-logo' alt="Logo" />
+          <Typography variant="h6" component={Link} to="/" sx={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold' }}>
+            Columbae
+          </Typography>
         </div>
 
-        {/* Mobile Menu Icon */}
-        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ display: { xs: 'block', md: 'none' } }} onClick={handleMenuOpen}>
-          <MenuIcon />
-        </IconButton>
-
-        {/* Links */}
-        <div className="navbar-links" sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <Button color="inherit" component={Link} to="/profile">Profile</Button>
+        <div className="navbar-links">
           <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component="a" href="#features">Features</Button>
-          <Button color="inherit" component="a" href="#developer">Developer</Button>
-
-          {/* Profile or Login */}
+          <Button color="inherit" component={Link} to="/profile">Profile</Button>
+          <Button color="inherit" href="#developer">Developer</Button>
+        
           {user ? (
-            <Button color="inherit" component={Link} to="/profile">
-              <img
-                src={user.photoURL || './Logo/Calm-Full-HD-Wallpaper.jpg'}
-                alt={user.userName}
-                style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-              />
-            </Button>
+            <img
+              src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'}
+              alt={user.userName}
+              className="profile-photo"
+            />
           ) : (
             <Button color="inherit" component={Link} to="/login">Login</Button>
           )}
         </div>
 
-        {/* Mobile Menu */}
-        <Menu
-          anchorEl={isMenuOpen}
-          open={Boolean(isMenuOpen)}
-          onClose={handleMenuClose}
-          sx={{ display: { xs: 'block', md: 'none' } }}
-        >
-          <MenuItem onClick={handleMenuClose}>
-            <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>Profile</Link>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#features" style={{ textDecoration: 'none', color: 'inherit' }}>Features</a>
-          </MenuItem>
-          <MenuItem onClick={handleMenuClose}>
-            <a href="#developer" style={{ textDecoration: 'none', color: 'inherit' }}>Developer</a>
-          </MenuItem>
-          {user ? (
-            <MenuItem onClick={handleMenuClose}>
-              <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
-                Profile
-              </Link>
-            </MenuItem>
-          ) : (
-            <MenuItem onClick={handleMenuClose}>
-              <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
-                Login
-              </Link>
-            </MenuItem>
-          )}
-        </Menu>
+        <IconButton edge="end" color="inherit" onClick={() => toggleDrawer(true)} sx={{ display: { md: 'none' } }}>
+          <MenuIcon />
+        </IconButton>
+
+
+       <Drawer
+       anchor="right"
+       open={drawerOpen}
+       onClose={() => toggleDrawer(false)}
+       sx={{
+       '& .MuiDrawer-paper': {
+       backgroundColor: 'black',  
+       color: 'white', 
+    },
+  }}
+>
+          <List>
+            <ListItem button onClick={() => toggleDrawer(false)} component={Link} to="/">
+              <ListItemText primary="Home" />
+            </ListItem>
+            <ListItem button onClick={() => toggleDrawer(false)} component={Link} to="/profile">
+              <ListItemText primary="Profile" />
+            </ListItem>
+            <ListItem button onClick={() => toggleDrawer(false)} href="#developer">
+              <ListItemText primary="Developer" />
+            </ListItem>
+            {user ? (
+              <ListItem button onClick={() => toggleDrawer(false)} component={Link} to="/profile">
+                <ListItemText primary={user.userName || 'Profile'} />
+              </ListItem>
+            ) : (
+              <ListItem button onClick={() => toggleDrawer(false)} component={Link} to="/login">
+                <ListItemText primary="Login" />
+              </ListItem>
+            )}
+          </List>
+        </Drawer>
       </Toolbar>
     </AppBar>
   );

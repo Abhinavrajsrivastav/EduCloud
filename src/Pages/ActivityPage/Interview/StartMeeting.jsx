@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './StartMeeting.css';
 
 function StartMeeting() {
@@ -25,6 +25,8 @@ function StartMeeting() {
       name: formData.name,
       email: formData.email,
     };
+
+//Now Database is not connected so we are not able to save user data into the database.
 
 //     try {
 //   const response = await fetch('http://localhost:8080/start-meeting', {

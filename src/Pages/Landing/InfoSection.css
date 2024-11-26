@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+
 /* Section styling */
 .info-sec {
     color: #fff;
@@ -46,7 +47,7 @@
 .info-column {
     flex: 1;
     text-align: start;
-    max-width: 50%;
+    width: 100%;
     font-family: 'Fredoka', sans-serif; /* Modern, clean font */
     font-weight: 500; /* Slightly bold overall */
     color: #f5f5f5; /* Light grey for contrast */
@@ -55,6 +56,8 @@
 .text-wrapper {
     max-width: 540px;
     margin: 0 auto;
+    position: relative;
+    bottom: 30px;
 }
 
 /* Top Line Style */
@@ -100,9 +103,7 @@
 }
 
 .btn:hover {
-    background: #3A49F7;
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Image Wrapper Styling */
@@ -156,7 +157,7 @@
 
     /* Adjust column width */
     .info-column {
-        max-width: 100%; /* Make the columns full width on mobile */
+        width: auto; /* Make the columns full width on mobile */
     }
 
     .text-wrapper{
@@ -178,6 +179,6 @@
     }
 
     .img {
-        max-width: 350px; /* Slightly smaller image for mobile */
+        width: auto; /* Slightly smaller image for mobile */
     }
 }

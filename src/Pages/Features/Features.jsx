@@ -23,37 +23,22 @@ const Features = () => {
     {
       icon: <FcPlanner className="feature-icon" />,
       description: 'Schedule an Interview',
-      activity: 'start-meeting'
+      activity: 'schedule-meeting...working'
     },
     {
       icon: <FcContacts className="feature-icon" />,
       description: 'Add Contacts',
-      activity: 'start-meeting'
+      activity: 'add-contacts...working'
     },
     {
       icon: <FcAbout className="feature-icon" />,
       description: 'View Chat History',
-      activity: 'start-meeting'
-    },
-    {
-      icon: <FcSettings className="feature-icon" />,
-      description: 'Settings',
-      activity: 'start-meeting'
+      activity: 'start-chat...working'
     },
     {
       icon: <FcUpload className="feature-icon" />,
       description: 'Upload Documents',
-      activity: 'start-meeting'
-    },
-    {
-      icon: <FcTodoList className="feature-icon" />,
-      description: 'View Interview Agenda',
-      activity: 'start-meeting'
-    },
-    {
-      icon: <FcPhoneAndroid className="feature-icon" />,
-      description: 'Start a Mobile Call',
-      activity: 'start-meeting'
+      activity: 'upload-media...working'
     },
   ];
 

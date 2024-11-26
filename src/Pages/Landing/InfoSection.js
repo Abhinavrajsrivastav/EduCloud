@@ -18,7 +18,6 @@ const InfoSection = ({
     alt,
     imgStart
 }) => {
-
     const { user } = useUser(); // Access user context
 
     return (
@@ -46,7 +45,13 @@ const InfoSection = ({
                     <div className="info-column">
                         <div className="img-wrapper">
                             {!user && <Login />}
-                            {/* {user && <img src={img || './Logo/landing_page.png'} alt={alt || 'Interview Platform'} className="img" />} */}
+                            {user && (
+                                <img
+                                    src={img || './Logo/landing_page.png'}
+                                    alt={alt || 'Interview Platform'}
+                                    className="img"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

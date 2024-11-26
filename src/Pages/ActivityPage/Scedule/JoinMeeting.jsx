@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt'; // Import ZegoUIKitPrebuilt
+import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 
 function JoinMeeting() {
   const [meetingCode, setMeetingCode] = useState('');
@@ -27,31 +27,44 @@ function JoinMeeting() {
 
     setIsJoining(true);
 
-    setTimeout(() => {
-      navigate(`/meeting/${meetingCode}`, {
-        state: { userName, meetingCode }, // Optionally pass the username and meeting code as state
+    // Extract the meeting code from the full URL (if necessary)
+    const extractedMeetingCode = meetingCode.includes('roomID=') 
+      ? new URLSearchParams(new URL(meetingCode).search).get('roomID')
+      : meetingCode;
+
+    // Navigate to the meeting URL
+    if (extractedMeetingCode) {
+      navigate(`/meeting/${extractedMeetingCode}`, {
+        state: { userName, meetingCode: extractedMeetingCode },
       });
 
-      // Use ZegoUIKitPrebuilt to start the meeting here if needed
-      const appID = 123456789; // Replace with your actual App ID
-      const serverSecret = 'your-server-secret'; // Replace with your server secret
-      const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, meetingCode, randomID(5), randomID(5));
+      // Zego token generation and joining the room
+      const appID = 123456789;
+      const serverSecret = 'your-server-secret'; 
+      const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
+        appID,
+        serverSecret,
+        extractedMeetingCode,
+        randomID(5),
+        randomID(5)
+      );
 
-      // Create the instance and start the meeting
       const zp = ZegoUIKitPrebuilt.create(kitToken);
       zp.joinRoom({
-        container: document.getElementById('meetingContainer'), // Make sure there's a container element with this ID
+        container: document.getElementById('meetingContainer'),
         sharedLinks: [
           {
             name: 'Copy Link',
-            url: `${window.location.href}?roomID=${meetingCode}`,
+            url: `${window.location.href}?roomID=${extractedMeetingCode}`,
           },
         ],
         scenario: {
-          mode: ZegoUIKitPrebuilt.GroupCall, // Adjust as needed
+          mode: ZegoUIKitPrebuilt.GroupCall,
         },
       });
-    }, 1000);
+    } else {
+      setErrorMessage('Invalid meeting code.');
+    }
   };
 
   return (
@@ -70,7 +83,7 @@ function JoinMeeting() {
         />
         <input
           type="text"
-          placeholder="Enter Meeting Code"
+          placeholder="Enter Meeting Link or Room ID"
           value={meetingCode}
           onChange={handleMeetingCodeChange}
           required
@@ -80,7 +93,7 @@ function JoinMeeting() {
         </button>
       </form>
 
-      <div id="meetingContainer" style={{ width: '100vw', height: '100vh' }}></div> {/* Container for the meeting */}
+      <div id="meetingContainer" style={{ width: '100vw', height: '100vh' }}></div>
     </div>
   );
 }

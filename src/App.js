@@ -8,6 +8,7 @@ import Landing from './Pages/Landing/InfoSection';
 import StartMeeting from './Pages/ActivityPage/Interview/StartMeeting';
 import JoinMeeting from './Pages/ActivityPage/Scedule/JoinMeeting';
 import VideoCallPage from './Pages/ActivityPage/VideoCallPage';
+import Footer from './Pages/Footer/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/join-meeting" element={<JoinMeeting />} />
           <Route path="/meeting" element={<VideoCallPage />} />
         </Routes>
+        <Footer />
       </Router>
     </UserProvider>
   );
