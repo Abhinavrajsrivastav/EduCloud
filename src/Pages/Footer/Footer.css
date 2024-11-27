@@ -29,14 +29,14 @@
 
 .footer-section h2 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-weight: 700;
 }
 
 
 .about-developer p {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #ddd;
     text-align: start;
 }
@@ -98,7 +98,7 @@
         flex-direction: column;
         align-items: start;
         text-align: start;
-        gap: 10px;
+        gap: 5px;
     }
 
     .footer-section {
@@ -110,10 +110,21 @@
     .footer-section ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         text-align: start;
+        gap: 2px;
     }
+
+    .footer-link{
+    text-align: start;
+      margin-left: 8px;
+    }
+
     .footer-bottom{
         text-align: center;
+    }
+
+    .about-project{
+        gap: 0px;
     }
 }

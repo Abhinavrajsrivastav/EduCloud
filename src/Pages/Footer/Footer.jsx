@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; 2024 Columbae | Made with 💜 by <a href="https://github.com/Abhinavrajsrivastav">Abhinav Raj Srivastava</a></p>
+                <p>&copy; 2024 Columbae<br/> Made with 💜 by <a href="https://github.com/Abhinavrajsrivastav">Abhinav Raj Srivastava</a></p>
             </div>
         </footer>
     );

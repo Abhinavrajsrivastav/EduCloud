@@ -145,7 +145,7 @@
     /* Adjust the info-sec height for mobile */
     .info-sec {
         height: auto; /* Set height to auto to prevent it from overflowing */
-        margin-top: 60px; /* Adjust for navbar height (if it's fixed) */
+        padding-top: 100px; /* Adjust for navbar height (if it's fixed) */
     }
 
     /* Adjust column width */

@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-links">
-          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button component={Link} to="/" sx={{ color: 'white' }}>Home</Button>
           <Button color="inherit" component={Link} to="/profile">Profile</Button>
           <Button color="inherit" href="#developer">Developer</Button>
         
@@ -50,7 +50,7 @@ const Navbar = () => {
        onClose={() => toggleDrawer(false)}
        sx={{
        '& .MuiDrawer-paper': {
-       backgroundColor: 'black',  
+       backgroundColor: '#181e59',  
        color: 'white', 
     },
   }}
