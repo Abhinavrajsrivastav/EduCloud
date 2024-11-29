@@ -96,6 +96,7 @@
   width: 200px;
   margin: 10px;
   color: inherit;
+  text-decoration: none;
 }
 
 .feature-card:hover {
@@ -103,9 +104,17 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+.user-avatar{
+  height: 50px;
+  width: 50px;
+  color: #007bff;
+  border-radius: 50%;
+}
+
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 5rem;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .feature-card h3 {
@@ -116,13 +125,16 @@
 }
 
 .feature-card p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem;
+  color: #ffffff;
   text-decoration: none;
 }
 
 
 @media (max-width: 768px) {
+  .profile-page{
+    overflow-x: hidden;
+  }
   .user-info {
     width: 80%;
     position: relative;

@@ -22,7 +22,8 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="user-info">
-        <FaUserCircle className="user-avatar" />
+        {/* <FaUserCircle className="user-avatar" /> */}
+        <img src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'} alt={user.email} className="user-avatar" />
         <h2>Welcome, {user.email}</h2>
       </div>
       {isSidebarOpen && (
@@ -37,17 +38,17 @@ const Profile = () => {
 
       <div className="features-grid">
         <Link to="/start-meeting" className="feature-card">
-          <FcVideoCall className="feature-icon" />
+          <FcVideoCall className="feature-icon" size='50'/>
           <h3>Start a Meeting</h3>
           <p>Join video calls seamlessly.</p>
         </Link>
         <Link to="/features" className="feature-card">
-          <FcComboChart className="feature-icon" />
+          <FcComboChart className="feature-icon" size='50'/>
           <h3>Analytics</h3>
           <p>Monitor interview metrics...working</p>
         </Link>
         <Link to="/schedule-meeting" className="feature-card">
-          <FcCalendar className="feature-icon" />
+          <FcCalendar className="feature-icon" size='50'/>
           <h3>Schedule Interview</h3>
           <p>Plan interviews with calendar sync...working</p>
         </Link>
