@@ -142,15 +142,13 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    /* Adjust the info-sec height for mobile */
     .info-sec {
-        height: auto; /* Set height to auto to prevent it from overflowing */
-        padding-top: 100px; /* Adjust for navbar height (if it's fixed) */
+        height: auto; 
+        padding-top: 100px;
     }
 
-    /* Adjust column width */
     .info-column {
-        width: auto; /* Make the columns full width on mobile */
+        width: auto; 
     }
 
     .text-wrapper{
@@ -159,7 +157,7 @@
     }
 
     .heading {
-        font-size: 2rem; /* Slightly smaller for mobile */
+        font-size: 2rem; 
     }
 
     .subtitle {
@@ -172,6 +170,6 @@
     }
 
     .img {
-        width: auto; /* Slightly smaller image for mobile */
+        width: auto;
     }
 }

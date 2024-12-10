@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../../API/Firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
-import './PasswordResetModal.css'; // Ensure this CSS file is created
+import './PasswordResetModal.css';
 
 const PasswordResetModal = ({ onClose }) => {
     const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const PasswordResetModal = ({ onClose }) => {
         try {
             await sendPasswordResetEmail(auth, email);
             setMessage('Password reset email sent! Check your inbox.');
-            setEmail(''); // Clear the email field
+            setEmail(''); 
         } catch (error) {
             setMessage(`Error: ${error.message}`);
         }
@@ -25,7 +25,7 @@ const PasswordResetModal = ({ onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <span className="close-button" onClick={onClose}>&times;</span> {/* Close button */}
+                <span className="close-button" onClick={onClose}>&times;</span>
                 <h2>Reset Password</h2>
                 <input 
                     type="email" 

@@ -26,7 +26,7 @@ function StartMeeting() {
       email: formData.email,
     };
 
-//Now Database is not connected so we are not able to save user data into the database.
+//Now Database is not connected so we are not able to save user data into the database...**
 
 //     try {
 //   const response = await fetch('http://localhost:8080/start-meeting', {
@@ -55,7 +55,7 @@ function StartMeeting() {
 //   console.error('Error:', error.message);
 // }
 
-navigate("/meeting");  // Redirect to /meeting
+navigate("/meeting");
 
 
   };

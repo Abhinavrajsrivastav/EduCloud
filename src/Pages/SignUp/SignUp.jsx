@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignUp.css'; // Importing CSS file
+import './SignUp.css'; 
 import { BsMicrosoft } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 

@@ -1,11 +1,11 @@
-// src/index.js
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App'; // Import your App component
+import App from './App'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App /> {/* Render the App directly without a Router wrapper */}
+    <App /> 
   </React.StrictMode>
 );

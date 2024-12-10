@@ -5,14 +5,12 @@ const Footer = () => {
     return (
         <footer className="footer" id="footers">
             <div className="footer-container">
-                {/* About Developer */}
                 <div className="footer-section about-developer">
                     <h2>About the Developer</h2>
                     <p>
                         Hi, I'm <strong>Abhinav Raj Srivastava</strong>, A Final Year Computer Science Engineering Student at ABES Engineering College, Ghaziabad.</p> 
                 </div>
 
-                {/* About Project */}
                 <div className="footer-section about-project">
                     <h2>About the Project</h2>
                     <p>

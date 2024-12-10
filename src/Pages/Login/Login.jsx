@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import PasswordResetModal from './PasswordResetModal'; // Import your modal component
+import PasswordResetModal from './PasswordResetModal'; 
 import './Login.css';
 import { auth } from '../../API/Firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { FcGoogle } from 'react-icons/fc';
-import { useUser } from '../../UserContext'; // Import useUser from UserContext
+import { useUser } from '../../UserContext'; 
 
 const Login = () => {
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [showModal, setShowModal] = useState(false); // State for modal visibility
-    const { user, setUser } = useUser(); // Use setUser to update user context
+    const [showModal, setShowModal] = useState(false);
+    const { user, setUser } = useUser(); 
 
-    // Check local storage for user details when the component mounts
     useEffect(() => {
         const userData = localStorage.getItem('user');
         if (userData) {
             const parsedUser = JSON.parse(userData);
-            setUser(parsedUser); // Update user context
-            // Optionally, set local state if needed
-            setEmail(parsedUser.email); // Set email for display
+            setUser(parsedUser);
+            setEmail(parsedUser.email); 
         }
     }, [setUser]);
 
@@ -30,36 +28,32 @@ const Login = () => {
 
     const handleContinue = async () => {
         if (isLogin) {
-            // Sign in
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
                 console.log('Login successful');
 
-                // Update user context and local storage with user details
                 const userData = {
-                    userName: user.displayName || email.split('@')[0], // Fallback to email prefix if displayName is not available
+                    userName: user.displayName || email.split('@')[0], 
                     email: user.email,
                 };
                 setUser(userData);
-                localStorage.setItem('user', JSON.stringify(userData)); // Save user data to local storage
+                localStorage.setItem('user', JSON.stringify(userData));
             } catch (error) {
                 console.error('Login error:', error.message);
             }
         } else {
-            // Sign up
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
                 console.log('Sign up successful');
 
-                // Update user context and local storage with user details
                 const userData = {
                     userName: user.displayName || email.split('@')[0],
                     email: user.email,
                 };
                 setUser(userData);
-                localStorage.setItem('user', JSON.stringify(userData)); // Save user data to local storage
+                localStorage.setItem('user', JSON.stringify(userData)); 
             } catch (error) {
                 console.error('Sign up error:', error.message);
             }
@@ -73,13 +67,12 @@ const Login = () => {
             const user = result.user;
             console.log('Google login successful. Email:', user.email);
 
-            // Update user context and local storage with Google account information
             const userData = {
                 userName: user.displayName || user.email.split('@')[0],
                 email: user.email,
             };
             setUser(userData);
-            localStorage.setItem('user', JSON.stringify(userData)); // Save user data to local storage
+            localStorage.setItem('user', JSON.stringify(userData));
         } catch (error) {
             console.error('Google login error:', error.message);
         }
@@ -132,7 +125,6 @@ const Login = () => {
                 </div>
             </div>
 
-            {/* Render the modal if showModal is true */}
             {showModal && <PasswordResetModal onClose={() => setShowModal(false)} />}
         </div>
     );

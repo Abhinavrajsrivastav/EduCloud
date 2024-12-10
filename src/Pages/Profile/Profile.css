@@ -1,4 +1,4 @@
-/* General Styles */
+
 .profile-page {
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
   background: url('./wave-haikei\ \(2\).svg') no-repeat center center/cover;
 }
 
-/* User Info */
+
 .user-info {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +35,7 @@
   color: #ffffff;
 }
 
-/* Contact Sidebar */
+
 .contact-sidebar {
   position: fixed;
   top: 64px;
@@ -76,7 +76,7 @@
   margin: 10px 0;
 }
 
-/* Feature Grid */
+
 .features-grid {
   gap: 20px;
   width: auto;

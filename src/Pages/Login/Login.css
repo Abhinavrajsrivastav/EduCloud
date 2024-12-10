@@ -1,6 +1,4 @@
 
-
-/* Container for Login Card */
 .login-container {
   display: flex;
   justify-content: center;
@@ -19,7 +17,6 @@
   text-align: center;
 }
 
-/* Header section */
 .login-header h2 {
   margin-bottom: 20px;
   font-size: 22px;
@@ -30,7 +27,7 @@
   margin-bottom: 15px;
 }
 
-/* Form Styles */
+
 .login-form {
   margin-bottom: 20px;
 }
@@ -98,7 +95,7 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Sign up section */
+
 .signup-section p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);

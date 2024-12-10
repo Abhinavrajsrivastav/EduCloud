@@ -22,7 +22,6 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="user-info">
-        {/* <FaUserCircle className="user-avatar" /> */}
         <img src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'} alt={user.email} className="user-avatar" />
         <h2>Welcome, {user.email}</h2>
       </div>
