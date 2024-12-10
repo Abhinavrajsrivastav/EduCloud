@@ -18,7 +18,7 @@ const InfoSection = ({
     alt,
     imgStart
 }) => {
-    const { user } = useUser(); // Access user context
+    const { user } = useUser(); 
 
     return (
         <div className={`info-sec ${lightBg ? 'light-bg' : 'dark-bg'}`}>

@@ -29,11 +29,12 @@ const Navbar = () => {
           <Button color="inherit" href="#developer">Developer</Button>
         
           {user ? (
-            <img
+           <Link to="/profile">
+             <img
               src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'}
               alt={user.userName}
               className="profile-photo"
-            />
+            /></Link>
           ) : (
             <Button color="inherit" component={Link} to="/login">Login</Button>
           )}
