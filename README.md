@@ -1,4 +1,4 @@
-# Interview Dashboard - Sopra Steria Externship 🚀
+# Interview Dashboard - Sopra Steria Externship
 
 Welcome to the **Interview Dashboard**, a feature-rich platform designed to simplify and streamline the interview process. This project is part of the **Superstar Extensions** initiative, aiming to deliver innovative and scalable solutions for modern development challenges.
 
@@ -45,6 +45,6 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/superstar-extensions.git
+   git clone https://github.com/Abhinavrajsrivastav/EduCloud.git
    cd superstar-extensions
 
