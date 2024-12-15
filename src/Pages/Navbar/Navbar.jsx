@@ -25,7 +25,7 @@ const Navbar = () => {
 
         <div className="navbar-links">
           <Button component={Link} to="/" sx={{ color: 'white' }}>Home</Button>
-          <Button color="inherit" component={Link} to="/profile">Profile</Button>
+          {user&&<Button color="inherit" component={Link} to="/profile">Profile</Button>}
           <Button color="inherit" href="#developer">Developer</Button>
         
           {user ? (
