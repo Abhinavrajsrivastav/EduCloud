@@ -35,7 +35,7 @@ const InfoSection = ({
                             <p className={`subtitle ${lightTextDesc ? 'light-text-desc' : ''}`}>
                                 {description || 'Our platform offers features that make interview scheduling, preparation, and tracking seamless for both interviewers and candidates.'}
                             </p>
-                            <Link to='/sign-up'>
+                            <Link to='/'>
                                 <button className={`btn ${primary ? 'primary' : ''}`}>
                                     {buttonLabel || 'Get Started Now'}
                                 </button>
