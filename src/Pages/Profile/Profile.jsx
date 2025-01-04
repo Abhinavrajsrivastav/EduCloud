@@ -15,15 +15,15 @@ const Profile = () => {
     }
   }, []);
 
-  if (!user) {
-    return <h1>Please log in to view your profile</h1>;
-  }
+  // if (!user) {
+  //   return <h1>Please log in to view your profile</h1>;
+  // }
 
   return (
     <div className="profile-page">
       <div className="user-info">
         <img src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'} alt={user.email} className="user-avatar" />
-        <h2>Welcome, {user.email}</h2>
+        <h2>Welcome, {user.email||"Dear User"}</h2>
       </div>
       {isSidebarOpen && (
         <div className="contact-sidebar">
