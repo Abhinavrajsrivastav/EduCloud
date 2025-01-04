@@ -22,15 +22,17 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="user-info">
-        <img src={user.photoURL || './logo/Calm-Full-HD-Wallpaper.jpg'} alt={user.email} className="user-avatar" />
-        <h2>Welcome, {user.email||"Dear User"}</h2>
+        <img src={'./logo/Calm-Full-HD-Wallpaper.jpg'} alt={""} className="user-avatar" />
+      
+        <h2>Welcome</h2>
       </div>
       {isSidebarOpen && (
         <div className="contact-sidebar">
           <h3>Contact Info</h3>
           <ul>
-            <li>Email: {user.email}</li>
-            <li>Phone: {user.phone || 'Not available'}</li>
+
+            {/* {user && <li>Email: {user.email}</li>} */}
+            {/* {user && <li>Phone: {user.phone}</li>} */}
           </ul>
         </div>
       )}
