@@ -28,8 +28,8 @@ function VideoCallPage() {
       const roomID = getUrlParams().get('roomID') || randomID(5);
       let myMeeting = async (element) => {
      // generate Kit Token
-      const appID = 950266397;
-      const serverSecret = "0bfddcf74eaf9ffa5d00c080a2d253d4";
+      const appID = 1797587997;
+      const serverSecret = "b8e173cdd733d0ea5a851a9df23b65c5";
       const kitToken =  ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID,  randomID(5),  randomID(5));
 
     
