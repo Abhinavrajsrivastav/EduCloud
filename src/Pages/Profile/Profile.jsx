@@ -25,9 +25,9 @@ const Profile = () => {
       <div className="user-info">
         <img src={'./logo/Calm-Full-HD-Wallpaper.jpg'} alt={""} className="user-avatar" />
         <h2>Welcome{currentUser ? `, ${currentUser.userName}` : ''}</h2>
-        {/* {currentUser && currentUser.email && (
+        {currentUser && currentUser.email && (
           <p className="user-email">{currentUser.email}</p>
-        )} */}
+        )}
       </div>
       {isSidebarOpen && (
         <div className="contact-sidebar">
@@ -45,15 +45,15 @@ const Profile = () => {
           <h3>Start a Meeting</h3>
           <p>Join video calls seamlessly.</p>
         </Link>
-        <Link to="/features" className="feature-card">
+        <Link to="/analytics" className="feature-card">
           <FcComboChart className="feature-icon" size='50'/>
           <h3>Analytics</h3>
-          <p>Monitor interview metrics...working</p>
+          <p>Monitor interview metrics and performance</p>
         </Link>
         <Link to="/schedule-meeting" className="feature-card">
           <FcCalendar className="feature-icon" size='50'/>
           <h3>Schedule Interview</h3>
-          <p>Plan interviews with calendar sync...working</p>
+          <p>Plan and manage your interviews</p>
         </Link>
       </div>
     </div>
