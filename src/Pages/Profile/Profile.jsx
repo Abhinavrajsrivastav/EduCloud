@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { FcCalendar, FcComboChart, FcVideoCall } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
-import { FcVideoCall, FcFeedback, FcComboChart, FcCalendar } from 'react-icons/fc';
+import { useUser } from '../../UserContext';
 import './Profile.css';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const { user: contextUser } = useUser();
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -15,24 +16,25 @@ const Profile = () => {
     }
   }, []);
 
-  // if (!user) {
-  //   return <h1>Please log in to view your profile</h1>;
-  // }
+  // Get user data from context or local state
+  const currentUser = contextUser || user;
+
 
   return (
     <div className="profile-page">
       <div className="user-info">
         <img src={'./logo/Calm-Full-HD-Wallpaper.jpg'} alt={""} className="user-avatar" />
-      
-        <h2>Welcome</h2>
+        <h2>Welcome{currentUser ? `, ${currentUser.userName}` : ''}</h2>
+        {/* {currentUser && currentUser.email && (
+          <p className="user-email">{currentUser.email}</p>
+        )} */}
       </div>
       {isSidebarOpen && (
         <div className="contact-sidebar">
           <h3>Contact Info</h3>
           <ul>
-
-            {/* {user && <li>Email: {user.email}</li>} */}
-            {/* {user && <li>Phone: {user.phone}</li>} */}
+            {currentUser && <li>Email: {currentUser.email}</li>}
+            {currentUser && currentUser.phone && <li>Phone: {currentUser.phone}</li>}
           </ul>
         </div>
       )}
